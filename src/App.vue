@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <comp-header />
+    <comp-header :title="title" />
     <img src="./assets/logo.png">
     <router-view/>
+    <comp-footer />
   </div>
 </template>
 
 <script>
 import CompHeader from './components/CompHeader'
+import CompFooter from './components/CompFooter'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      title: 'Hello Header Vue'
+    }
+  },
   components: {
-    CompHeader
+    CompHeader,
+    CompFooter
   }
 }
 </script>

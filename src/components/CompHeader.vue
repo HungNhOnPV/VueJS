@@ -5,16 +5,18 @@
 <script>
 export default {
   name: 'comp-header',
+  props: {
+    title: String
+  },
   data () {
     return {
-      title: 'Header'
     }
   }
 }
 </script>
 
 <style scoped>
-.title {
-  color: green;
-}
+  .title {
+    color: green;
+  }
 </style>
