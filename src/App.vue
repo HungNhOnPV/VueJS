@@ -1,13 +1,19 @@
 <template>
   <div id="app">
+    <comp-header />
     <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import CompHeader from './components/CompHeader'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    CompHeader
+  }
 }
 </script>
 
