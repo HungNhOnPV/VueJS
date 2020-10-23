@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <comp-header :title="title" @handleChangeTitle="handleChangeTitle"/>
-    <img src="./assets/logo.png">
+    <comp-avatar />
     <router-view/>
     <comp-footer />
   </div>
@@ -10,6 +10,7 @@
 <script>
 import CompHeader from './components/CompHeader'
 import CompFooter from './components/CompFooter'
+import CompAvatar from './components/CompAvatar'
 
 export default {
   name: 'App',
@@ -20,7 +21,8 @@ export default {
   },
   components: {
     CompHeader,
-    CompFooter
+    CompFooter,
+    CompAvatar
   },
   methods: {
     handleChangeTitle: function (e) {
