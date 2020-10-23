@@ -2,6 +2,7 @@
   <div class="avatar">
     <button @click="handleAvatar()" class="avatar__btn">Change Avatar</button>
     <input type="file" :style="{display: 'none'}" ref="changeAvatar" />
+    <slot />
   </div>
 </template>
 

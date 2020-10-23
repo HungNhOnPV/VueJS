@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <comp-header :title="title" @handleChangeTitle="handleChangeTitle"/>
-    <comp-avatar />
+    <comp-avatar>
+      <div class="demo__slot">Demo slot</div>
+    </comp-avatar>
     <router-view/>
     <comp-footer />
   </div>
