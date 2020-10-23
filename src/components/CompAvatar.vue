@@ -16,6 +16,36 @@ export default {
     handleAvatar: function () {
       this.$refs.changeAvatar.click()
     }
+  },
+  // Chạy trước khi tạo dữ liệu
+  beforeCreate () {
+    console.log('beforeCreate')
+  },
+  // Chạy sau khi tạo dự liệu
+  created () {
+    // Thường gọi api tại đây
+    console.log('created')
+  },
+  beforeMount () {
+    console.lgo('beforeMount')
+  },
+  // Chạy sau khi tải xong html
+  mounted () {
+    // Sử dụng jquery tại đây
+    console.log('mounted')
+  },
+  // Chạy khi có sự thay đổi về dữ liệu
+  beforeUpdate () {
+    console.log('beforeUpdate')
+  },
+  updated () {
+    console.log('updated')
+  },
+  beforeDestroy () {
+    console.log('beforeDestroy')
+  },
+  destroyed () {
+    console.log('destroyed')
   }
 }
 </script>
