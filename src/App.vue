@@ -13,6 +13,7 @@
             <input class="form-control mt-3 mb-3" type="email" placeholder="Email" v-model="user.email" />
             <button class="btn btn-block btn-success" type="submit" @click.prevent="submit()">Add User</button>
           </div>
+          <input class="form-control mt-3 mb-3" type="text" placeholder="Node" v-model="node" />
           <button class="btn btn-block btn-danger" @click="getUsers()">Show User</button>
           <ul class="list-group mt-3">
             <li class="list-group-item" v-for="(user, index) in users" :key="index">{{ user.name }} - {{ user.email }}</li>
@@ -41,7 +42,8 @@ export default {
         email: ''
       },
       users: [],
-      resource: {}
+      resource: {},
+      node: ''
     }
   },
   components: {
@@ -64,9 +66,11 @@ export default {
       //   })
       // this.resource.save({}, this.user)
       this.resource.createdItem(this.user)
+      this.user.name = ''
+      this.user.email = ''
     },
     getUsers: function () {
-      this.$http.get('')
+      this.resource.getNodeData({ node: this.node })
         .then(response => {
           return response.json()
         }, error => {
@@ -90,9 +94,10 @@ export default {
     // Thường gọi api tại đây
     console.log('created')
     const customActions = {
-      createdItem: { method: 'POST', url: 'data.json' }
+      createdItem: { method: 'POST', url: 'data.json' },
+      getNodeData: { method: 'GET' }
     }
-    this.resource = this.$resource('users.json', {}, customActions)
+    this.resource = this.$resource('{node}.json', {}, customActions)
   },
   beforeMount () {
     console.log('beforeMount')
