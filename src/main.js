@@ -11,7 +11,13 @@ Vue.http.options.root = 'https://vue-resource-cf573.firebaseio.com/users.json'
 Vue.http.interceptors.push((request, next) => {
   console.log(request)
   if (request.method === 'POST') request.method = 'PUT'
-  next()
+  next(response => {
+    response.json = () => {
+      return {
+        message: response.body
+      }
+    }
+  })
 })
 
 /* eslint-disable no-new */
