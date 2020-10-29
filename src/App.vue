@@ -40,7 +40,8 @@ export default {
         name: '',
         email: ''
       },
-      users: []
+      users: [],
+      resource: {}
     }
   },
   components: {
@@ -53,14 +54,16 @@ export default {
       this.title = e.title
     },
     submit: function () {
-      this.$http.post('', this.user)
-        .then(response => {
-          console.log(response)
-          this.user.name = ''
-          this.user.email = ''
-        }, error => {
-          console.log(error)
-        })
+      // this.$http.post('', this.user)
+      //   .then(response => {
+      //     console.log(response)
+      //     this.user.name = ''
+      //     this.user.email = ''
+      //   }, error => {
+      //     console.log(error)
+      //   })
+      // this.resource.save({}, this.user)
+      this.resource.createdItem(this.user)
     },
     getUsers: function () {
       this.$http.get('')
@@ -86,6 +89,10 @@ export default {
   created () {
     // Thường gọi api tại đây
     console.log('created')
+    const customActions = {
+      createdItem: { method: 'POST', url: 'data.json' }
+    }
+    this.resource = this.$resource('users.json', {}, customActions)
   },
   beforeMount () {
     console.log('beforeMount')
