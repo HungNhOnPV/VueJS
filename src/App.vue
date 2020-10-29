@@ -53,7 +53,7 @@ export default {
       this.title = e.title
     },
     submit: function () {
-      this.$http.post('https://vue-resource-cf573.firebaseio.com/users.json', this.user)
+      this.$http.post('', this.user)
         .then(response => {
           console.log(response)
           this.user.name = ''
@@ -63,7 +63,7 @@ export default {
         })
     },
     getUsers: function () {
-      this.$http.get('https://vue-resource-cf573.firebaseio.com/users.json')
+      this.$http.get('')
         .then(response => {
           return response.json()
         }, error => {

@@ -7,6 +7,7 @@ import vueResource from 'vue-resource'
 
 Vue.config.productionTip = false
 Vue.use(vueResource)
+Vue.http.options.root = 'https://vue-resource-cf573.firebaseio.com/users.json'
 
 /* eslint-disable no-new */
 new Vue({
