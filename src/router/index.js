@@ -15,7 +15,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
+      name: 'helloWorld',
       components: {
         default: HelloWorld,
         'comp-header': CompHeader
@@ -23,7 +23,7 @@ export default new Router({
     },
     {
       path: '/user',
-      name: 'User',
+      name: 'user',
       component: User,
       children: [
         {
@@ -47,6 +47,10 @@ export default new Router({
       path: '/avatar',
       name: 'avatar',
       component: CompAvatar
+    },
+    {
+      path: '/auth-redirect',
+      redirect: { name: 'helloWorld' }
     }
   ]
 })
