@@ -1,9 +1,6 @@
 <template>
   <div id="app">
     <comp-header :title="title" @handleChangeTitle="handleChangeTitle"/>
-    <comp-avatar>
-      <div class="demo__slot">Demo slot</div>
-    </comp-avatar>
     <router-view/>
     <div class="container">
       <div class="row">
@@ -26,9 +23,8 @@
 </template>
 
 <script>
-import CompHeader from './components/CompHeader'
-import CompFooter from './components/CompFooter'
-import CompAvatar from './components/CompAvatar'
+import CompHeader from './components/layout/CompHeader'
+import CompFooter from './components/layout/CompFooter'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -48,8 +44,7 @@ export default {
   },
   components: {
     CompHeader,
-    CompFooter,
-    CompAvatar
+    CompFooter
   },
   methods: {
     handleChangeTitle: function (e) {

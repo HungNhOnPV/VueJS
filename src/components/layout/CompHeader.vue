@@ -1,5 +1,10 @@
 <template>
   <div class="header">
+    <nav class="nav justify-content-center">
+      <router-link tag="a" class="nav-link" to="/" active-class="active" exact>Home</router-link>
+      <router-link tag="a" class="nav-link" to="/user" active-class="active">User</router-link>
+      <router-link tag="a" class="nav-link disabled" to="avatar" active-class="active">Avatar</router-link>
+    </nav>
     <h1 class="title">{{ title }}</h1>
     <button @click="handleChangeTitle">Change Title</button>
   </div>
@@ -27,5 +32,8 @@ export default {
 <style scoped>
   .title {
     color: green;
+  }
+  .active {
+    color: red;
   }
 </style>
