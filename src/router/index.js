@@ -7,6 +7,7 @@ import UserDetail from '../components/user/UserDetail.vue'
 import UserStart from '../components/user/Index.vue'
 import UserEdit from '../components/user/UserEdit.vue'
 import CompHeader from '../components/layout/CompHeader.vue'
+import NotFound from '../components/notFound/NotFound.vue'
 
 Vue.use(Router)
 
@@ -51,6 +52,15 @@ export default new Router({
     {
       path: '/auth-redirect',
       redirect: { name: 'helloWorld' }
+    },
+    {
+      path: '/notFound',
+      name: 'notFound',
+      component: NotFound
+    },
+    {
+      path: '*',
+      redirect: 'notFound'
     }
   ]
 })
