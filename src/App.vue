@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <comp-header :title="title" @handleChangeTitle="handleChangeTitle"/>
+    <router-view name="comp-header" />
     <router-view/>
     <div class="container">
       <div class="row">
