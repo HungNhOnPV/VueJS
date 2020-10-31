@@ -1,13 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import User from '../components/user/User.vue'
 import CompAvatar from '../components/avatar/CompAvatar.vue'
-import UserDetail from '../components/user/UserDetail.vue'
-import UserStart from '../components/user/Index.vue'
-import UserEdit from '../components/user/UserEdit.vue'
 import CompHeader from '../components/layout/CompHeader.vue'
 import NotFound from '../components/notFound/NotFound.vue'
+
+const User = resolve => {
+  require.ensure(['../components/user/User.vue'], () => {
+    resolve(require('../components/user/User.vue'))
+  }, 'user')
+}
+
+const UserDetail = resolve => {
+  require.ensure(['../components/user/UserDetail.vue'], () => {
+    resolve(require('../components/user/UserDetail.vue'))
+  }, 'user')
+}
+
+const UserStart = resolve => {
+  require.ensure(['../components/user/Index.vue'], () => {
+    resolve(require('../components/user/Index.vue'))
+  }, 'user')
+}
+
+const UserEdit = resolve => {
+  require.ensure(['../components/user/UserEdit.vue'], () => {
+    resolve(require('../components/user/UserEdit.vue'))
+  }, 'user')
+}
 
 Vue.use(Router)
 
