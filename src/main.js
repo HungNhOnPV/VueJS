@@ -20,6 +20,11 @@ Vue.http.interceptors.push((request, next) => {
   })
 })
 
+router.beforeEach((to, from, next) => {
+  console.log('Global route guards')
+  next()
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

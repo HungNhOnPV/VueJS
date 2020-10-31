@@ -39,7 +39,11 @@ export default new Router({
         {
           path: ':id',
           name: 'userDetails',
-          component: UserDetail
+          component: UserDetail,
+          beforeEnter: (to, from, next) => {
+            console.log('Active route guards')
+            next()
+          }
         },
         {
           path: ':id/edit',

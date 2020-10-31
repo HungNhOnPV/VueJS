@@ -24,6 +24,14 @@ export default {
       }
     }
   },
+  beforeRouteEnter (to, from, next) {
+    // eslint-disable-next-line no-constant-condition
+    if (true) {
+      next()
+    } else {
+      next(false)
+    }
+  },
   watch: {
     '$route': function (to, from) {
       this.id = to.params.id
