@@ -9,6 +9,9 @@
         Brower: {{ $route.query.brower}}
       </li>
     </ul>
+    <div :style="{height: 700 + 'px'}"></div>
+    <h1 id="hash-fragment">Hash Fragments</h1>
+    <div :style="{height: 700 + 'px'}"></div>
   </div>
 </template>
 

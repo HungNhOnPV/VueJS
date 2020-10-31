@@ -2,7 +2,7 @@
   <div class="user__detail">
     <h1>User Details</h1>
     <p>User Id: {{ id }}</p>
-    <router-link tag="button" :to="{ name: 'userEdit', params: { id: id}, query: { locate: 'vi', brower: 'chorme'}}" class="btn btn-warning">Edit User</router-link>
+    <router-link tag="button" :to="link" class="btn btn-warning">Edit User</router-link>
   </div>
 </template>
 
@@ -11,7 +11,17 @@ export default {
   name: 'user-default',
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      link: {
+        name: 'userEdit',
+        params: {
+          id: this.id
+        },
+        query: {
+          locate: 'vi', brower: 'chorme'
+        },
+        hash: '#hash-fragment'
+      }
     }
   },
   watch: {
