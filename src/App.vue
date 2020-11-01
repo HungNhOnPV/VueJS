@@ -22,6 +22,7 @@
     </div>
     <counter @increment="increment" @decrement="decrement" />
     <result :result="result" />
+    <outher />
     <router-view name="comp-footer" />
   </div>
 </template>
@@ -32,6 +33,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import Counter from './components/demoVuex/Counter'
 import Result from './components/demoVuex/Result'
+import Outher from './components/demoVuex/Outher'
 
 export default {
   name: 'App',
@@ -50,7 +52,8 @@ export default {
   },
   components: {
     Counter,
-    Result
+    Result,
+    Outher
   },
   methods: {
     increment: function ($event) {
