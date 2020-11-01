@@ -20,15 +20,20 @@
         </div>
       </div>
     </div>
-    <comp-footer />
+    <counter @increment="increment" @decrement="decrement" />
+    <result :result="result" />
+    <router-view name="comp-footer" />
   </div>
 </template>
 
 <script>
-import CompHeader from './components/layout/CompHeader'
-import CompFooter from './components/layout/CompFooter'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// eslint-disable-next-line no-unused-vars
+import Counter from './components/demoVuex/Counter'
+// eslint-disable-next-line no-unused-vars
+import Result from './components/demoVuex/Result'
 
 export default {
   name: 'App',
@@ -41,14 +46,21 @@ export default {
       },
       users: [],
       resource: {},
-      node: ''
+      node: '',
+      result: 0
     }
   },
   components: {
-    CompHeader,
-    CompFooter
+    Counter,
+    Result
   },
   methods: {
+    increment: function ($event) {
+      this.result = this.result + $event
+    },
+    decrement: function ($event) {
+      this.result = this.result + $event
+    },
     handleChangeTitle: function (e) {
       this.title = e.title
     },

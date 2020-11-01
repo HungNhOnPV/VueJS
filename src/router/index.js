@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import CompAvatar from '../components/avatar/CompAvatar.vue'
 import CompHeader from '../components/layout/CompHeader.vue'
+import CompFooter from '../components/layout/CompFooter.vue'
 import NotFound from '../components/notFound/NotFound.vue'
 
 const User = resolve => {
@@ -43,7 +44,8 @@ export default new Router({
       name: 'helloWorld',
       components: {
         default: HelloWorld,
-        'comp-header': CompHeader
+        'comp-header': CompHeader,
+        'comp-footer': CompFooter
       }
     },
     {
