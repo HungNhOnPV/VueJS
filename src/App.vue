@@ -30,9 +30,7 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-// eslint-disable-next-line no-unused-vars
 import Counter from './components/demoVuex/Counter'
-// eslint-disable-next-line no-unused-vars
 import Result from './components/demoVuex/Result'
 
 export default {

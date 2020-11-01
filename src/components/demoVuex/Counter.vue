@@ -12,10 +12,10 @@ export default {
   },
   methods: {
     increment: function () {
-      this.$emit('increment', 1)
+      this.$store.state.result++
     },
     decrement: function () {
-      this.$emit('decrement', -1)
+      this.$store.state.result--
     }
   }
 }

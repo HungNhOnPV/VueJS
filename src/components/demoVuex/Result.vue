@@ -6,12 +6,10 @@
 
 <script>
 export default {
-  data () {
-    return {}
-  },
-  props: {
-    // eslint-disable-next-line standard/object-curly-even-spacing
-    result: { type: Number, default: 0}
+  computed: {
+    result: function () {
+      return this.$store.state.result
+    }
   }
 }
 </script>
