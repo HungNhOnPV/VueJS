@@ -7,17 +7,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   computed: {
     result: function () {
       return this.$store.state.result
     },
-    tenResult: function () {
-      return this.$store.getters.tenResult
-    },
-    nameResult: function () {
-      return this.$store.getters.nameResult
-    }
+    ...mapGetters([ 'tenResult', 'nameResult' ])
   }
 }
 </script>

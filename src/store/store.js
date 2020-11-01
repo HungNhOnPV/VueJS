@@ -14,5 +14,13 @@ export const store = new Vuex.Store({
     nameResult: state => {
       return state.result + ' name product'
     }
+  },
+  mutations: {
+    incrementOption: function (state, n) {
+      state.result += n
+    },
+    decrement: state => {
+      state.result--
+    }
   }
 })
